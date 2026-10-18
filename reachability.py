@@ -7,7 +7,7 @@ from cfg import BlockId, CFG
 
 def compute_reachable(cfg: CFG) -> set[BlockId]:
     """Devolva os IDs alcançáveis a partir da entrada, incluindo a entrada."""
-
+    # Percorra o grafo do CFG, ignorando os blocos que não são alcançáveis (DFS).
     reachable: set[BlockId] = set()
     pending = [cfg.entry]
     while pending:
